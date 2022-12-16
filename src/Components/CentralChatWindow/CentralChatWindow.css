@@ -1,0 +1,123 @@
+.chatWindow-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* padding: 0 30px 10px;    */
+    /* margin-left: 20%; */
+    /* border: 2px solid red; */
+}
+
+.chatWindow-receivedMessages {
+    width: 95%;
+    max-height: 80%;
+    height: 650px;
+    font-family: 'Lato', sans-serif;
+}
+
+.chatWindow-receivedMessages-content {
+    padding:  1%;
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+    /* border: 2px solid red; */
+    /* border-bottom: 2px solid red; */
+    padding-bottom: 0;
+    /* background-color: black; */
+}
+
+.chatWindow-receivedMessages-content * {
+    overflow-anchor: none;
+}
+
+#anchor {
+    overflow-anchor: auto;
+    height: 1px;
+}
+
+.chatWindow-receivedMessages-content::-webkit-scrollbar {
+    display: none;
+}
+
+.chatWindow-sendMessage {
+    width: 90%;
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+    z-index: 1;
+}
+
+.chatWindow-sendMessage-container {
+    width: 97%;
+    border-top: 2px solid var(--blackShade2);
+    height: 15%;
+    font-family: 'Lato', sans-serif;
+    padding-top: 5px;
+    margin-right: 2%;
+}
+
+.flex-r-c-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-r-sb-c {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatWindow-title {
+    height: 8%; 
+    width: 100%;
+    /* padding: 20px; */
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: capitalize;
+    background-color: #dadee1;
+}
+
+.singleMessage-container {
+    border-top: none;
+    background-color: var(--lightBlue);
+    color: var(--blackShade2);
+    font-size: 16px;
+    font-weight: 600;
+    width: fit-content;
+    max-width: 50%;
+    padding: 0 30px 0px;
+    border-radius: 5px;
+    margin: 20px;
+    text-align: left;
+    white-space: pre;
+}
+
+.singleMessage-user-name {
+    font-size: 12px;
+    font-weight: 500;
+    /* margin-top: 10px; */
+    padding: 5px 0;
+    margin-left: -20px;
+}
+
+.right-align {
+    margin-left: auto;
+    text-align: right;
+    margin-right: -10px;
+}
+
+.left-align {
+    margin-right: auto;
+    margin-left: -10px;
+    background-color: var(--lemonGreen);
+    color: var(--blackShade2);
+}
+
+.right-name {
+    margin-right: -20px;
+}
+
+.smallText-time {
+    font-size: 10px;
+}

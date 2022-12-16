@@ -1,0 +1,16 @@
+.sideUserList-container {
+    height: 100%;
+}
+
+
+.sideUserList-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height:100%;
+}
+
+.sideUserList-content div {
+    height: 50%;
+}
