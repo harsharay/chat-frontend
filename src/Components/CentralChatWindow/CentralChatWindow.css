@@ -121,3 +121,34 @@
 .smallText-time {
     font-size: 10px;
 }
+
+.animate {
+    animation: blurEffect 3s ease-out;
+}
+
+@keyframes blurEffect {
+    0% {
+        opacity: 0.3;
+        background-color: #88d75c;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0.5;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
