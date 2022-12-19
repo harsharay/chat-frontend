@@ -65,6 +65,7 @@ const CentralChatWindow = ({socket}) => {
         const usernameLocalStorage = currentUserData; // Name(details) stored in the localstorage
         const receivedMessageUsername = messageData.currentUserData; // Name(details) received from the server, socket emit event
         const messageTime = messageData.messageSendTime // Message sent time
+        const currentMessageId = allMessages.length + 1;
 
         const messageTimeHours = new Date(messageTime).getHours();
         const messageTimeMinutes = new Date(messageTime).getMinutes();
@@ -74,6 +75,7 @@ const CentralChatWindow = ({socket}) => {
         if (usernameLocalStorage === receivedMessageUsername) {
             currentUserIsTheSender = true;
         }
+        console.log(currentMessageId)
 
         setAllMessages([...allMessages, { 
             data:messageData.currentMessage,
@@ -82,7 +84,8 @@ const CentralChatWindow = ({socket}) => {
             messageTime: {
                 messageTimeHours,
                 messageTimeMinutes
-            }
+            },
+            currentMessageId
         }])
     })
 
@@ -108,7 +111,7 @@ const CentralChatWindow = ({socket}) => {
                             {allMessages.map((msg, indx) => {
                                 // singleMessage-container
                                 return (
-                                    <div key={indx} className={`singleMessage-container ${msg.isCurrentUserSender ? 'right-align' : 'left-align'}`}>
+                                    <div key={indx} className={`singleMessage-container ${msg.isCurrentUserSender ? 'right-align' : 'left-align'} ${(msg.currentMessageId === allMessages.length && !msg.isCurrentUserSender) ? 'animate' : ''}`}>
                                         <p className={`singleMessage-user-name ${msg.isCurrentUserSender && 'right-name'}`}>
                                             {msg.user}{msg && msg.isCurrentUserSender && 
                                                 <span style={{fontWeight: '600'}}>&nbsp;(You)</span>}
